@@ -1,6 +1,10 @@
 FROM ubuntu:18.04
 MAINTAINER Daniel Nicolas Gisolfi
+
 ENV DEBIAN_FRONTEND=noninteractive
+ENV VERSION=02
+ENV HOST_IP=10.11.17.38
+
 RUN apt-get update -y \
     && apt-get install -y \
         build-essential \

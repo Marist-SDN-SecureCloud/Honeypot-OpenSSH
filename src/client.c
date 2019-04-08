@@ -1,4 +1,5 @@
 // Source code found at: https://github.com/dgisolfi/SocketStream
+// Author:  Daniel Nicolas Gisolfi
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

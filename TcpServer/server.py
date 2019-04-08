@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# Author:  Daniel Nicolas Gisolfi
+
 import os
 import sys
 import uuid
@@ -16,7 +18,7 @@ class Server:
         self.honeypot = 'SSH-Honeypot'
         self.honeypot_version = os.getenv('VERSION', '02')
         self.id = self.honeypot[:3] + self.honeypot_version
-        self.host_ip = os.getenv('VERSION', '10.11.17.23')
+        self.host_ip = os.getenv('HOST_IP', '0.0.0.0')
         self.host_name = socket.gethostname()
         self.pid = os.getpid()
         self.hpid = uuid.uuid4()
@@ -49,7 +51,7 @@ class Server:
         data = msg.split(',')
         log = f'{self.id},{datetime.datetime.now()},{self.honeypot},{self.host_ip},'
         log += f'{self.host_name},{self.pid},{self.hpid},{self.method},Null,'
-        log += f'{data[0]},{data[1]},NULL,username={data[2]}&password={data[3]}'
+        log += f'{data[0]},{data[1]},NULL,username={data[2]}&password={data[3]}\n'
 
         return log
     

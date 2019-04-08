@@ -27,7 +27,7 @@ run: build
 
 # Push Docker image to Docker Hub
 publish: build
-	@docker tag $(IMAGE) $(USER)/$(IMAGE):latest
+	@docker tag $(IMAGE) $(USER)/$(IMAGE):11.38
 	@docker push $(USER)/$(IMAGE)
 
 .PHONY: intro clean build run
