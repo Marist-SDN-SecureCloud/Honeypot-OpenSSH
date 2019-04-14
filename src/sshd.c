@@ -2156,8 +2156,10 @@ main(int ac, char **av)
     printf("Connection from %s port %d on %s port %d",
 	    remote_ip, remote_port, laddr,  get_local_port());
 
+    // Log the connection the a physical file for later
+    // Should appear in the root directory.
     FILE *f;    
-    f = fopen("fuck.log", "a+");
+    f = fopen("ssh-honeypot.log", "a+");
     
     fprintf(f, "Connection from %s port %d on %s port %d",
 	    remote_ip, remote_port, laddr,  get_local_port());
